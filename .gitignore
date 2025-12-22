@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+
+# Virtual Environment
+.venv/
+
+# Environment Variable
+.env
+
+# IDE
+.vscode/
+
+# Python version
+.python-version

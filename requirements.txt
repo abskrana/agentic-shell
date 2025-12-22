@@ -1,0 +1,9 @@
+# Frontend Requirements for Local System
+# This service runs the web server, PTY interface, and connects to Lightning AI backend
+
+# Web server and Socket.IO for real-time communication
+aiohttp==3.9.5
+python-socketio==5.11.2
+
+# Environment configuration
+python-dotenv==1.0.1

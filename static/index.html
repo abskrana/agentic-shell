@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ==================== Meta Information ==================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Shell</title>
+    <meta name="description" content="AI-powered terminal assistant with multi-language voice support">
+    
+    <!-- ==================== External Dependencies ==================== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown-dark.min.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  
+  <body>
+    <!-- ==================== Split Container ==================== -->
+    <div id="split-container">
+      <!-- Terminal Panel (Left) -->
+      <div id="terminal-panel" class="split">
+        <div id="terminal-container"></div>
+      </div>
+      
+      <!-- Chat Panel (Right) -->
+      <div id="chat-panel" class="split">
+        <div id="chat-header">
+          <h3>🤖 Agent Chat</h3>
+          <button id="clear-chat-btn" class="clear-chat-btn" title="Clear chat">
+            <span class="material-icons">refresh</span>
+          </button>
+        </div>
+        <div id="chat-messages"></div>
+      </div>
+    </div>
+    
+    <!-- ==================== Task Mode: Approval Buttons ==================== -->
+    <div id="approval-buttons" class="approval-container" style="display: none;">
+      <button id="approve-btn" class="approval-btn approve">Execute</button>
+      <button id="reject-btn" class="approval-btn reject">Cancel</button>
+    </div>
+    
+    <!-- ==================== Loading Indicator ==================== -->
+    <div id="loading-container" class="loading-container" style="display: none;">
+      <div class="loading-content">
+        <div class="spinner"></div>
+        <span class="loading-text">Agent is working...</span>
+      </div>
+      <button id="cancel-btn" class="cancel-btn">
+        <span class="material-icons">close</span>
+        <span>Stop</span>
+      </button>
+    </div>
+    
+    <!-- ==================== Agent Control Bar ==================== -->
+    <form id="agent-bar">
+      <!-- Mode Toggle: Task | Ask | Auto | Iterative -->
+      <button type="button" id="mode-toggle-btn" class="mode-toggle" data-mode="task">
+        <span class="toggle-text">Task Mode</span>
+      </button>
+      
+      <!-- Model Toggle: Gemini | Qwen -->
+      <button type="button" id="model-toggle-btn" class="model-toggle" data-model="gemini" title="Switch between Gemini and Qwen models">
+        <span class="model-text">Gemini</span>
+      </button>
+      
+      <!-- Text Input Field -->
+      <input type="text" id="agent-input" placeholder="Enter a task for the agent..." autocomplete="off">
+      
+      <!-- Language Selection for Voice Input -->
+      <select id="language-select" class="language-select" title="Select language for voice input">
+        <option value="off">Off</option>
+        <option value="en" selected>English</option>
+        <option value="hi">Hindi</option>
+        <option value="bn">Bengali</option>
+        <option value="te">Telugu</option>
+        <option value="mr">Marathi</option>
+        <option value="ta">Tamil</option>
+        <option value="gu">Gujarati</option>
+        <option value="kn">Kannada</option>
+        <option value="ml">Malayalam</option>
+        <option value="pa">Punjabi</option>
+        <option value="or">Odia</option>
+        <option value="as">Assamese</option>
+      </select>
+      
+      <!-- Voice Input: Click to Toggle Recording -->
+      <button type="button" id="voice-btn" class="voice-button" title="Click to toggle voice recording" disabled>
+        <span class="material-icons">mic</span>
+      </button>
+      
+      <!-- Send Button -->
+      <button type="submit" id="send-btn" class="send-button" title="Send message">
+        <span class="material-icons">send</span>
+      </button>
+    </form>
+    
+    <!-- ==================== External Scripts ==================== -->
+    <!-- Terminal emulator -->
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
+    <!-- Fit addon for responsive terminal sizing -->
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.min.js"></script>
+    <!-- Socket.IO for real-time communication -->
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.7.2/dist/socket.io.min.js"></script>
+    <!-- Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <!-- Main application logic -->
+    <script src="/static/main.js"></script>
+  </body>
+</html>

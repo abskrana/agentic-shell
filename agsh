@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Agentic Shell - Global Launcher
+# This script can be called from anywhere to start the Agentic Shell server
+
+# Resolve the actual installation directory (follow symlinks)
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+INSTALL_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+# Change to the installation directory
+cd "$INSTALL_DIR"
+
+# Run the start script
+exec ./start.sh
