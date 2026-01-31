@@ -6,15 +6,15 @@ Tell the agent what you want to do, and it will plan and execute commands for yo
 
 ## Features
 
--   **🌐 Browser-Based Interface:** A full-featured terminal and AI chat panel, side-by-side in your browser.
--   **🎯 4 Intelligent Execution Modes:**
+-   **Browser-Based Interface:** A full-featured terminal and AI chat panel, side-by-side in your browser.
+-   **4 Intelligent Execution Modes:**
     -   **Ask Mode:** Get instant answers and guidance without executing commands.
     -   **Task Mode:** The agent proposes a plan for your approval before running anything.
     -   **Auto Mode:** The agent plans and executes tasks autonomously.
     -   **Iterative Mode:** The agent executes one command at a time, analyzing the output to decide its next move.
--   **🎤 Multi-Language Voice Support:** Use your voice to give commands in 12 supported languages: English, Hindi, Bengali, Telugu, Marathi, Tamil, Gujarati, Kannada, Malayalam, Punjabi, Odia, and Assamese.
--   **⚡ Real-Time Interaction:** Powered by WebSockets for instant command execution and output streaming.
--   **🧠 Smart Context:** The AI analyzes your terminal's screen to provide context-aware plans and answers.
+-   **Multi-Language Voice Support:** Use your voice to give commands in 12 supported languages: English, Hindi, Bengali, Telugu, Marathi, Tamil, Gujarati, Kannada, Malayalam, Punjabi, Odia, and Assamese.
+-   **Real-Time Interaction:** Powered by WebSockets for instant command execution and output streaming.
+-   **Smart Context:** The AI analyzes your terminal's screen to provide context-aware plans and answers.
 
 ## Project Architecture
 
